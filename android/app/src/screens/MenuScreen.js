@@ -21,7 +21,7 @@ export default function MenuScreen({ navigation }) {
 
   const { selectedDishes } = useContext(AppContext);
 
-  // Filter dishes based on category, search, Veg/Non-Veg
+  // Filter dishes based on category search Veg/Non-Veg
   const filtered = dishes.filter(d =>
     d.mealType === categoryTypes[activeCat] &&
     ((showVeg && d.type === 'VEG') || (showNonVeg && d.type === 'NON-VEG')) &&

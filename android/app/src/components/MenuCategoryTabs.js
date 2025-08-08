@@ -6,14 +6,14 @@ const categories = ['Starter', 'Main Course', 'Dessert', 'Sides'];
 export default function CategoryTabs({ selected, counts, onSelect }) {
   return (
     <View style={{ flexDirection: 'row' }}>
-      {categories.map(cat => (
+      {categories.map(arr => (
         <TouchableOpacity
-            key={cat}
-            style={[styles.tab, selected === cat && styles.selectedTab]}
-            onPress={() => onSelect(cat)}
+            key={arr}
+            style={[styles.tab, selected === arr && styles.selectedTab]}
+            onPress={() => onSelect(arr)}
         >
-          <Text style={selected === cat && styles.selectedText}>{cat}</Text>
-          {!!(counts && counts[cat]) && <Text> ({counts[cat]})</Text>}
+          <Text style={selected === arr && styles.selectedText}>{arr}</Text>
+          {!!(counts && counts[arr]) && <Text> ({counts[arr]})</Text>}
         </TouchableOpacity>
       ))}
     </View>
